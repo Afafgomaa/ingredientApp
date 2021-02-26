@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "cc447117-9a88-43db-8ead-a9376821fe87",
+		"name": "ingredientApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ingredient",
+			"item": [
+				{
+					"name": "create ingredient ",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "suger",
+									"type": "text"
+								},
+								{
+									"key": "measure",
+									"value": "g",
+									"description": "['g', 'kg', 'pieces']",
+									"type": "text"
+								},
+								{
+									"key": "supplier",
+									"value": "afaf",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}ingredients",
+							"host": [
+								"{{url}}ingredients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list all ingredients",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}ingredients",
+							"host": [
+								"{{url}}ingredients"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "recipe",
+			"item": [
+				{
+					"name": " create a recipe",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "recipes 10",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.",
+									"type": "text"
+								},
+								{
+									"key": "ingredients",
+									"value": "[{\"id\" : 1,\n\"amount\": 4},{\"id\" : 2,\n\"amount\": 20}]",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}recipes",
+							"host": [
+								"{{url}}recipes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list all recipes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}recipes",
+							"host": [
+								"{{url}}recipes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "create a box",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "client_name",
+									"value": "order",
+									"type": "text"
+								},
+								{
+									"key": "delivery_date",
+									"value": "2021-03-01",
+									"type": "text"
+								},
+								{
+									"key": "recipes",
+									"value": "[{\"id\":3,\"count\":2},{\"id\":1,\"count\":1}]",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}orders",
+							"host": [
+								"{{url}}orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "company",
+			"item": [
+				{
+					"name": "ingredients required by company for the  next 7 days",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}company-required-ingredient",
+							"host": [
+								"{{url}}company-required-ingredient"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8000/api/"
+		}
+	]
+}
